@@ -1,4 +1,5 @@
 from config import config
+from src.db_manager import DBManager
 from src.utils import get_hh_json, create_db, save_data_to_db
 
 
@@ -11,4 +12,5 @@ def main():
     data = get_hh_json(employers)
     create_db('hh_vacancies', params)
     save_data_to_db(data, 'hh_vacancies', params)
+    db_manager = DBManager('hh_vacancies', params)
     pass
