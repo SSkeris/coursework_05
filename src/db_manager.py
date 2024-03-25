@@ -74,9 +74,9 @@ class DBManager:
         """
         conn = psycopg2.connect(dbname=self.db_name, **self.params)
         with conn.cursor() as cur:
-            cur.execute(f"SELECT * FROM vacancies"
-                        f"WHERE lower(title) LIKE '%{keyword}%'"
-                        f"OR lower(title) LIKE '%{keyword}'"
+            cur.execute(f"SELECT * FROM vacancies "
+                        f"WHERE lower(title) LIKE '%{keyword}%' "
+                        f"OR lower(title) LIKE '%{keyword}' "
                         f"OR lower(title) LIKE '{keyword}%';")
             data = cur.fetchall()
         conn.close()
