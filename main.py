@@ -1,5 +1,5 @@
 from config import config
-from src.utils import get_hh_json, create_db
+from src.utils import get_hh_json, create_db, save_data_to_db
 
 
 def main():
@@ -10,9 +10,5 @@ def main():
                  '1057', '1429999', '129044', '42600', '1122462']
     data = get_hh_json(employers)
     create_db('hh_vacancies', params)
-
-
-
-
-
+    save_data_to_db(data, 'hh_vacancies', params)
     pass
