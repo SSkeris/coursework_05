@@ -7,7 +7,7 @@ class DBManager:
     Класс для получения данных из БД по вакансиям
     """
 
-    def __init__(self, db_name, params=config()):
+    def __init__(self, db_name: str, params=config()):
         self.db_name = db_name
         self.params = params
 
